@@ -1,0 +1,16 @@
+
+<div class="navbar">
+
+  <h2><%= link_to '', cocktails_path(@cocktails), class: 'fas fa-arrow-left' %></h2>
+     <h1>Thirsty<span style="color: #e5b5bf">app<%= image_tag "drink.png", alt: "logo", width: 50 %></span></h1>
+
+  </div>
+
+<h2>Create a new cocktail</h2>
+      <%= simple_form_for @cocktail do |f| %>
+        <%= f.input :name %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+<br>
+
+

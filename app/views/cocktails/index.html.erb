@@ -1,0 +1,26 @@
+<!-- Header with only H1 + link -->
+
+<div class="navbar">
+     <h1>Thirsty<span style="color: #e5b5bf">app<%= image_tag "drink.png", alt: "logo", width: 50 %></span></h1>
+     <h2><%= link_to "", new_cocktail_path, class: 'fas fa-cocktail' %></h2>
+  </div>
+
+<!-- A main container that wraps the all page elements -->
+<div container>
+  <!-- <p> Some text here to understand <p>-->
+  <!-- A div grid -->
+  <div class="row">
+    <!-- A div card -->
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="cocktail-card" style="background-color: #ffffe5" >
+          <div class="card-description">
+            <h2> <%= image_tag "drink.png", alt: "logo", width: 50 %><%= cocktail.name.capitalize %> </h2>
+            <%= link_to 'See cocktail', cocktail_path(cocktail), class: 'card-link' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
